@@ -97,6 +97,7 @@
   cmd="mvim -c 'Gdiff' $MERGED"     # use fugitive.vim for 3-way merge
   keepbackup=false
 [merge]
+  ff = no
   summary = true
   verbosity = 1
   tool = mvimdiff
@@ -125,3 +126,12 @@
   enabled = true
 [include]
   path = .gitconfig.user
+[user]
+	name = Maruf Siddiqui
+	email = maruf.siddiqui@shore.com
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
